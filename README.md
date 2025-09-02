@@ -29,6 +29,8 @@ This project was created to practice building interactive UIs, handling dynamic 
 
 ## 📂 Project Structure
 
+```plaintext
+
 space-app/
 │── app/
 │ ├── home/page.tsx # Home page
@@ -46,6 +48,8 @@ space-app/
 │── eslint.config.mjs # ESLint setup
 │── package.json
 │── README.md
+
+```
 
 ---
 
