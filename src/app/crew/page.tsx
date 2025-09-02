@@ -58,7 +58,7 @@ export default function Destination() {
           MEET YOUR CREW
         </p>
       </div>
-      <section className="mt-0  mb-20 flex flex-col lg:flex-row flex-wrap items-center lg:gap-40  justify-between">
+      <section className="mt-10  mb-20 flex flex-col lg:flex-row flex-wrap items-center lg:gap-40  justify-between">
         <section className="flex flex-col  flex-wrap gap-10 lg:text-left text-center">
           {selectedItem ? (
             <div className="w-full max-w-md lg:text-left text-center">
