@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Space App
 
-## Getting Started
+A multi-page responsive space exploration website built with **Next.js 15**, **React 19**, **Tailwind CSS 4**, and **TypeScript**.  
+This project was created to practice building interactive UIs, handling dynamic data with state, and implementing responsive layouts.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- 📱 **Responsive Design** – optimized layouts for mobile, tablet, and desktop.  
+- 🖼️ **Dynamic Backgrounds** – page-specific images that adapt to screen size.  
+- 🔄 **Tab Navigation** – switch between planets, crew, and technologies dynamically.  
+- 🍔 **Hamburger Menu** – mobile navigation with animated open/close.  
+- 🎨 **Tailwind Styling** – clean, utility-first CSS with custom responsive rules.  
+- 🛠️ **TypeScript Support** – strong typing for data models (planets, crew, technologies).  
+- ✅ **Linting** – ESLint configured with Next.js + TypeScript rules.
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js 15](https://nextjs.org/) – React framework  
+- [React 19](https://react.dev/) – UI library  
+- [Tailwind CSS 4](https://tailwindcss.com/) – styling  
+- [TypeScript](https://www.typescriptlang.org/) – static typing  
+- [ESLint](https://eslint.org/) – code linting  
+
+---
+
+## 📂 Project Structure
+
+space-app/
+│── app/
+│ ├── home/page.tsx # Home page
+│ ├── destination/page.tsx # Planet selection
+│ ├── crew/page.tsx # Crew profiles
+│ ├── technology/page.tsx # Technologies
+│ ├── layout.tsx # Root layout (with backgrounds)
+│ └── globals.css # Global styles
+│
+│── components/
+│ ├── header.tsx # Logo + navigation wrapper
+│ ├── headerLinks.tsx # Desktop + mobile nav
+│
+│── public/assets/ # Images
+│── eslint.config.mjs # ESLint setup
+│── package.json
+│── README.md
+
+---
+
+## 🚀 Installation
+
+First, clone the repository and install dependencies:
+
+``` bash
+git clone <https://github.com/Theezigner/space-app.git>
+cd <space-app>
+pnpm install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+``` bash
+pnpm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+The app should now be running on <http://localhost:3000>.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚦 Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Home → Hero section with "Explore" button.
+- Destination → Pick a planet to see details.
+- Crew → Learn about different crew members.
+- Technology → Explore space technologies (switch images per screen size).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 💡 Code Highlights
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Background Switching in layout.tsx
+
+``` tsx
+const pageBackgrounds: Record<string, string> = {
+  "/": `
+    lg:bg-[url('/assets/home/background-home-desktop.jpg')] 
+    md:bg-[url('/assets/home/background-home-tablet.jpg')] 
+    bg-[url('/assets/home/background-home-mobile.jpg')]
+  `,
+  // other pages...
+};
+
+const bgClass = pageBackgrounds[pathname] ?? "bg-black";
+
+<body className={`min-h-screen ${bgClass} bg-cover bg-no-repeat text-white`}>
+  <Header />
+  {children}
+</body>
+```
+
+### Tab Navigation Example (Crew Page)
+
+``` tsx
+{crews.map((crew) => (
+  <button
+    key={crew.name}
+    onClick={() => setSelectedCrew(crew.name)}
+    className={`w-2 h-2 rounded-full ${
+      selectedCrew === crew.name ? "bg-white" : "bg-gray-400"
+    }`}
+  />
+))}
+```
+
+## 🚀 Future Improvements
+
+- Add animations for smoother transitions.
+- Fetch data from an API instead of hardcoding arrays.
+- Add testing with Jest/React Testing Library.
+- Deploy on Vercel for live hosting.
+
+---
+
+## Live links
+- **Live Demo**: [Live Demo](https://space-app-seven-rouge.vercel.app/)
+- **GitHub**: [GitHub Link](https://github.com/Theezigner/space-app.git)
+
+---
+
+## 👨‍💻 Author
+-  Temitayo Adebayo
+- **Portfolio**: [Theezigner](https://theezigner-porfolio.vercel.app/)
