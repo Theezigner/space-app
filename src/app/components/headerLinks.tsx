@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link"; 
 
 export default function HeaderLinks() {
   const pathname = usePathname();
@@ -18,16 +19,17 @@ export default function HeaderLinks() {
       <nav className="pr-20 pl-10 w-full hidden md:flex items-center justify-end bg-white/5 backdrop-blur-md uppercase">
         <ul className="flex gap-8 text-base">
           {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`flex flex-row cursor-pointer py-8 hover:border-b-2 hover:underline-offset-4 ${
-                pathname === link.href ? "border-b-2" : ""
-              }`}
-            >
-              <p className="font-bold mr-2">{link.number}</p>
-              <p>{link.label}</p>
-            </a>
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`flex flex-row cursor-pointer py-8 hover:border-b-2 hover:underline-offset-4 ${
+                  pathname === link.href ? "border-b-2" : ""
+                }`}
+              >
+                <p className="font-bold mr-2">{link.number}</p>
+                <p>{link.label}</p>
+              </Link>
+            </li>
           ))}
         </ul>
       </nav>
@@ -83,16 +85,18 @@ function Hamburger({
         <nav>
           <ul className="flex flex-col gap-10 text-sm uppercase">
             {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`flex flex-row cursor-pointer hover:border-r-2 hover:underline-offset-4 ${
-                  pathname === link.href ? "border-r-2" : ""
-                }`}
-              >
-                <p className="font-bold mr-2">{link.number}</p>
-                <p>{link.label}</p>
-              </a>
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`flex flex-row cursor-pointer hover:border-r-2 hover:underline-offset-4 ${
+                    pathname === link.href ? "border-r-2" : ""
+                  }`}
+                  onClick={() => setOpen(false)} 
+                >
+                  <p className="font-bold mr-2">{link.number}</p>
+                  <p>{link.label}</p>
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>

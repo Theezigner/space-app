@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { bellefair, barlow } from "../layout";
 
 type Planet = {
@@ -15,7 +16,7 @@ const planets: Planet[] = [
     image: "/assets/destination/image-moon.png",
     name: "MOON",
     description:
-      "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+      "See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you're there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
     avgDistance: "384,400",
     estTravelTime: "3 DAYS",
   },
@@ -23,7 +24,7 @@ const planets: Planet[] = [
     image: "/assets/destination/image-mars.png",
     name: "MARS",
     description:
-      "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+      "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!",
     avgDistance: "225 MIL.",
     estTravelTime: "9 MONTHS",
   },
@@ -31,7 +32,7 @@ const planets: Planet[] = [
     image: "/assets/destination/image-europa.png",
     name: "EUROPA",
     description:
-      "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+      "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover's dream. With an icy surface, it's perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
     avgDistance: "628 MIL.",
     estTravelTime: "3 YEARS",
   },
@@ -59,16 +60,21 @@ export default function Destination() {
       <main className="px-10 lg:px-50">
         <div className="flex justify-center md:justify-start text-base md:text-xl md:ml-20 lg:ml-0">
           <p>
-            <span className="tracking-widest text-gray-600 font-bold ">01 </span>{" "}
+            <span className="tracking-widest text-gray-600 font-bold ">
+              01{" "}
+            </span>{" "}
             PICK YOUR DESTINATION
           </p>
         </div>
         <section className="mt-20 mb-20 flex flex-col lg:flex-row flex-wrap gap-20 items-center justify-center">
           <div className="flex-shrink-0">
-            <img
+            <Image
               src={selectedItem.image}
               alt={selectedItem.name}
+              width={384}
+              height={384}
               className="w-48 h-48 md:w-64 md:h-64 lg:w-96 lg:h-96"
+              priority
             />
           </div>
           <section className="flex flex-col  flex-wrap gap-10 lg:text-left text-center">
