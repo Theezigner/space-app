@@ -1,57 +1,35 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import Header from "./components/header";
+import { Bellefair, Barlow_Condensed, Barlow } from "next/font/google";
 import "./globals.css";
-import { Bellefair } from "next/font/google";
+import BodyWrapper from "./components/bodyWrapper";
 
-const pageBackgrounds: Record<string, string> = {
-  "/": `
-    lg:bg-[url('/assets/home/background-home-desktop.jpg')] 
-    md:bg-[url('/assets/home/background-home-tablet.jpg')] 
-    bg-[url('/assets/home/background-home-mobile.jpg')]
-  `,
-  "/destination": `
-    lg:bg-[url('/assets/destination/background-destination-desktop.jpg')] 
-    md:bg-[url('/assets/destination/background-destination-tablet.jpg')] 
-    bg-[url('/assets/destination/background-destination-mobile.jpg')]
-  `,
-  "/crew": `
-    lg:bg-[url('/assets/crew/background-crew-desktop.jpg')] 
-    md:bg-[url('/assets/crew/background-crew-tablet.jpg')] 
-    bg-[url('/assets/crew/background-crew-mobile.jpg')]
-  `,
-  "/technology": `
-    lg:bg-[url('/assets/technology/background-technology-desktop.jpg')] 
-    md:bg-[url('/assets/technology/background-technology-tablet.jpg')] 
-    bg-[url('/assets/technology/background-technology-mobile.jpg')]
-  `,
-};
+export const bellefair = Bellefair({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bellefair",
+});
 
-function BodyWrapper({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+export const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-barlow",
+});
 
-  const bgClass = pageBackgrounds[pathname] ?? "bg-black";
+const barlowCondensed = Barlow_Condensed({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-barlow-condensed",
+});
 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <body
-      className={`min-h-screen ${bgClass} bg-cover bg-no-repeat text-white`}
-    >
-      <Header />
-      <div className="mt-10 lg:mt-0">
-        {children}
-      </div>
-    </body>
-  );
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <BodyWrapper>
-        {children}
-      </BodyWrapper>
+    <html lang="en" className={barlowCondensed.className}>
+      <body>
+        <BodyWrapper>{children}</BodyWrapper>
+      </body>
     </html>
   );
 }
-

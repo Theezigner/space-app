@@ -16,7 +16,7 @@ export default function HeaderLinks() {
   return (
     <header className="flex items-center">
       <nav className="pr-20 pl-10 w-full hidden md:flex items-center justify-end bg-white/5 backdrop-blur-md uppercase">
-        <ul className="flex gap-8 text-sm">
+        <ul className="flex gap-8 text-base">
           {links.map((link) => (
             <a
               key={link.href}

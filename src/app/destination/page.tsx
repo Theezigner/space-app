@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { bellefair, barlow } from "../layout";
 
 type Planet = {
   image: string;
@@ -58,8 +59,8 @@ export default function Destination() {
       <main className="px-10 lg:px-50">
         <div className="flex justify-center md:justify-start text-base md:text-xl md:ml-20 lg:ml-0">
           <p>
-            <span className="text-gray-600 font-bold ">01 </span> PICK YOUR
-            DESTINATION
+            <span className="tracking-widest text-gray-600 font-bold ">01 </span>{" "}
+            PICK YOUR DESTINATION
           </p>
         </div>
         <section className="mt-20 mb-20 flex flex-col lg:flex-row flex-wrap gap-20 items-center justify-center">
@@ -88,22 +89,30 @@ export default function Destination() {
             </div>
             {selectedItem ? (
               <div className="  rounded-lg shadow-md w-full max-w-md lg:text-left text-center">
-                <h2 className="text-6xl font-semibold mb-2">
+                <h2
+                  className={`${bellefair.className} text-6xl font-semibold mb-2`}
+                >
                   {selectedItem.name}
                 </h2>
-                <p className="text-gray-500 mt-5 border-b-1 border-gray-700 pb-5 lg:pb-10">
+                <p
+                  className={`${barlow.className} text-gray-400 mt-5 border-b-1 border-gray-700 pb-5 lg:pb-10`}
+                >
                   {selectedItem.description}
                 </p>
                 <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-10 pt-5 lg:pt-10">
                   <div className="flex flex-col gap-3">
                     <p className="text-sm text-gray-500">AVG. DISTANCE</p>
-                    <p className="text-xl font-semibold">
+                    <p
+                      className={`${bellefair.className} text-xl font-semibold`}
+                    >
                       {selectedItem.avgDistance} KM
                     </p>
                   </div>
                   <div className="flex flex-col gap-3">
                     <p className="text-sm text-gray-500">EST. TRAVEL TIME</p>
-                    <p className="text-xl font-semibold">
+                    <p
+                      className={`${bellefair.className} text-xl font-semibold`}
+                    >
                       {selectedItem.estTravelTime}
                     </p>
                   </div>

@@ -2,6 +2,7 @@
 
 A multi-page responsive space exploration website built with **Next.js 15**, **React 19**, **Tailwind CSS 4**, and **TypeScript**.  
 This project was created to practice building interactive UIs, handling dynamic data with state, and implementing responsive layouts.
+It also makes use of three custom fonts – **Barlow**, **Barlow Condensed**, and **Bellefair**.
 
 ---
 
@@ -14,6 +15,7 @@ This project was created to practice building interactive UIs, handling dynamic 
 - 🎨 **Tailwind Styling** – clean, utility-first CSS with custom responsive rules.  
 - 🛠️ **TypeScript Support** – strong typing for data models (planets, crew, technologies).  
 - ✅ **Linting** – ESLint configured with Next.js + TypeScript rules.
+- 🔗 **Navigation Enhancements** – the logo button links to the Home page, and the Explore button links to the Destination page.
 
 ---
 
@@ -41,6 +43,7 @@ space-app/
 │ └── globals.css # Global styles
 │
 │── components/
+│ ├── bodyWrapper.tsx # background per page navigation
 │ ├── header.tsx # Logo + navigation wrapper
 │ ├── headerLinks.tsx # Desktop + mobile nav
 │

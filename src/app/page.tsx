@@ -1,15 +1,19 @@
-// app/home/page.tsx
+import { bellefair, barlow } from "./layout";
 export default function Home() {
   return (
-    <main className="px-10 lg:px-50 w-full flex flex-col lg:flex-row items-center justify-center h-auto lg:pt-30 gap-20 md:gap-15">
+    <main
+      className={`px-10 lg:px-50 w-full flex flex-col lg:flex-row items-center justify-center h-auto lg:pt-30 gap-20 md:gap-15`}
+    >
       <section className="flex flex-col flex-1 gap-5 text-center lg:text-left items-center lg:items-start">
-        <p className="uppercase text-sm md:text-lg md:mt-20">
+        <p className="tracking-widest uppercase text-sm md:text-lg md:mt-20">
           SO, YOU WANT TO TRAVEL TO
         </p>
-        <p className="uppercase lg:text-9xl md:text-7xl text-5xl font-bold">
+        <p
+          className={`${bellefair.className} uppercase lg:text-9xl md:text-7xl text-5xl`}
+        >
           space
         </p>
-        <p className="max-w-md lg:max-w-lg text-gray-400 text-sm">
+        <p className={`${barlow.className} max-w-md lg:max-w-lg text-gray-400`}>
           Let’s face it; if you want to go to space, you might as well genuinely
           go to outer space and not hover kind of on the edge of it. Well, sit
           back, and relax because we’ll give you a truly out-of-this-world
@@ -17,9 +21,12 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="px-15 py-21 md:px-20 md:py-30 text-black bg-white  rounded-full">
+      <a
+        href="/destination"
+        className={`${bellefair.className} px-15 py-21 md:px-20 md:py-30 text-black bg-white  rounded-full`}
+      >
         <p className="uppercase md:text-3xl text-xl">explore</p>
-      </section>
+      </a>
     </main>
   );
 }
