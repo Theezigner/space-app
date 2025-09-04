@@ -2,13 +2,14 @@ import { Bellefair, Barlow_Condensed, Barlow } from "next/font/google";
 import "./globals.css";
 import BodyWrapper from "./components/bodyWrapper";
 
-export const bellefair = Bellefair({
+const bellefair = Bellefair({
   weight: "400",
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-bellefair",
 });
 
-export const barlow = Barlow({
+const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-barlow",
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={barlowCondensed.className}>
+    <html lang="en" className={`${barlowCondensed.variable} ${bellefair.variable} ${barlow.variable}`}>
       <body>
         <BodyWrapper>{children}</BodyWrapper>
       </body>

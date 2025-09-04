@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { bellefair, barlow } from "../layout";
-import Image from "next/image"; // ✅ import Image
+import Image from "next/image"; 
 
 type Crew = {
   jobTitle: string;
@@ -53,27 +52,27 @@ export default function Destination() {
   return (
     <main className="px-10 lg:px-50 ">
       <div className="flex justify-center md:justify-start text-base md:text-xl md:ml-20 lg:ml-0">
-        <p>
+        <h2>
           <span className="tracking-widest text-gray-600 font-bold ">02 </span>{" "}
           MEET YOUR CREW
-        </p>
+        </h2>
       </div>
       <section className="mt-10  mb-20 flex flex-col lg:flex-row flex-wrap items-center lg:gap-40  justify-between">
         <section className="flex flex-col  flex-wrap gap-10 lg:text-left text-center">
           {selectedItem ? (
             <div className="w-full max-w-md lg:text-left text-center">
-              <p
-                className={`${bellefair.className} uppercase text-gray-400 text-xl  pb-5`}
+              <h1
+                className={` uppercase text-gray-400 text-xl  pb-5`}
               >
                 {selectedItem.jobTitle}
-              </p>
-              <h2
-                className={`${bellefair.className} uppercase md:text-4xl  text-3xl font-semibold mb-2`}
+              </h1>
+              <h1
+                className={` uppercase md:text-4xl  text-3xl font-semibold mb-2`}
               >
                 {selectedItem.name}
-              </h2>
+              </h1>
               <p
-                className={`${barlow.className} text-gray-400 mt-5  pb-5 lg:pb-10`}
+                className={` text-gray-400 mt-5  pb-5 lg:pb-10`}
               >
                 {selectedItem.description}
               </p>

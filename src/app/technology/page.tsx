@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { bellefair, barlow } from "../layout";
 
 type Technology = {
   id: number;
@@ -55,12 +54,12 @@ export default function Destination() {
     <>
       <main className="  lg:pl-50">
         <div className="flex justify-center md:justify-start text-base md:text-xl">
-          <p>
+          <h2>
             <span className="tracking-widest text-gray-600 font-bold md:ml-20 lg:ml-0">
               03{" "}
             </span>{" "}
             SPACE LAUNCH 101
-          </p>
+          </h2>
         </div>
         <section className="mt-20 mb-20 flex flex-col lg:flex-row flex-wrap gap-5 lg:gap-25 items-center justify-center">
           <div className="flex lg:flex-col flex-wrap gap-3 mb-5 justify-center lg:justify-start">
@@ -68,9 +67,7 @@ export default function Destination() {
               <button
                 key={technology.name}
                 onClick={() => setSelectedTechnology(technology.name)}
-                className={`${
-                  bellefair.className
-                } w-15 h-15 rounded-full mx-1 transition text-xl ${
+                className={` w-15 h-15 rounded-full mx-1 transition text-xl ${
                   selectedTechnology === technology.name
                     ? "bg-white text-black"
                     : "bg-transparent border-2 "
@@ -83,18 +80,18 @@ export default function Destination() {
           <section className="flex order-2 lg:order-1 flex-col  flex-wrap gap-10 lg:text-left text-center">
             {selectedItem ? (
               <div className="w-full max-w-md lg:text-left text-center">
-                <p
-                  className={`${bellefair.className} uppercase text-gray-400 md:text-2xl  text-xl pb-5`}
+                <h1
+                  className={` uppercase text-gray-400 md:text-2xl  text-xl pb-5`}
                 >
                   THE TERMINOLOGY...
-                </p>
-                <h2
-                  className={`${bellefair.className} uppercase md:text-5xl  text-3xl font-semibold mb-2`}
+                </h1>
+                <h1
+                  className={` uppercase md:text-5xl  text-3xl font-semibold mb-2`}
                 >
                   {selectedItem.name}
-                </h2>
+                </h1>
                 <p
-                  className={`${barlow.className} text-gray-400 mt-5  pb-5 lg:pb-10 px-5 md:px-0`}
+                  className={` text-gray-400 mt-5  pb-5 lg:pb-10 px-5 md:px-0`}
                 >
                   {selectedItem.description}
                 </p>

@@ -16,7 +16,7 @@ export default function HeaderLinks() {
 
   return (
     <header className="flex items-center">
-      <nav className="pr-20 pl-10 w-full hidden md:flex items-center justify-end bg-white/5 backdrop-blur-md uppercase">
+      <nav className=" pr-20 pl-10 w-full hidden md:flex items-center justify-end bg-white/5 backdrop-blur-md uppercase">
         <ul className="flex gap-8 text-base">
           {links.map((link) => (
             <li key={link.href}>
@@ -26,8 +26,8 @@ export default function HeaderLinks() {
                   pathname === link.href ? "border-b-2" : ""
                 }`}
               >
-                <p className="font-bold mr-2">{link.number}</p>
-                <p>{link.label}</p>
+                <h2 className="font-bold mr-2">{link.number}</h2>
+                <h2>{link.label}</h2>
               </Link>
             </li>
           ))}

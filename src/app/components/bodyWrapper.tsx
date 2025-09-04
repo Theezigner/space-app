@@ -36,7 +36,7 @@ export default function BodyWrapper({
 
   return (
     <body
-      className={`min-h-screen ${bgClass} bg-cover bg-no-repeat text-white`}
+      className={`link min-h-screen ${bgClass} bg-cover bg-no-repeat text-white`}
     >
       <Header />
       <div className="mt-10 lg:mt-0">{children}</div>
