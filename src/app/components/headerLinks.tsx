@@ -93,8 +93,8 @@ function Hamburger({
                   }`}
                   onClick={() => setOpen(false)} 
                 >
-                  <p className="font-bold mr-2">{link.number}</p>
-                  <p>{link.label}</p>
+                  <h2 className="font-bold mr-2">{link.number}</h2>
+                  <h2>{link.label}</h2>
                 </Link>
               </li>
             ))}
