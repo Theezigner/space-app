@@ -95,7 +95,7 @@ export default function Destination() {
             </div>
             {selectedItem ? (
               <div className="  rounded-lg shadow-md w-full max-w-md lg:text-left text-center">
-                <h1 className={` text-6xl font-semibold mb-2`}>
+                <h1 className={` text-6xl mb-2`}>
                   {selectedItem.name}
                 </h1>
                 <p

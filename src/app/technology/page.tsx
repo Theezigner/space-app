@@ -86,7 +86,7 @@ export default function Destination() {
                   THE TERMINOLOGY...
                 </h1>
                 <h1
-                  className={` uppercase md:text-5xl  text-3xl font-semibold mb-2`}
+                  className={` uppercase md:text-5xl  text-3xl mb-2`}
                 >
                   {selectedItem.name}
                 </h1>
